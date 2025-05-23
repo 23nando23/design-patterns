@@ -31,9 +31,17 @@ export class Calculator {
     return 2 * rectangle.getWidth() + 2 * rectangle.getHeight();
   }
 
-  public static getDiagonal(rectangle: Rectangular): number {
+ public static getDiagonal(rectangle: Rectangular): number {
     return Math.sqrt(
       Math.pow(rectangle.getHeight(), 2) + Math.pow(rectangle.getWidth(), 2),
     );
+  }
+  
+public static getWidthHeightRatio(r: Rectangular): number {
+    const height = r.getHeight();
+    if (height === 0) {
+      throw new Error("Height must not be zero");
+    }
+    return r.getWidth() / height;
   }
 }
