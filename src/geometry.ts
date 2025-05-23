@@ -7,6 +7,7 @@ export interface Quadratic {
 export class Square implements Quadratic {
   constructor(private side: number) {}
 
+
   public toString(): string {
     return `Square(${this.side})`;
   }
@@ -25,5 +26,10 @@ export class RectangleAdapter implements Rectangular {
 
   public getHeight(): number {
     return this.square.getSide();
+  }
+
+  public toString(): string {
+    const s = this.square.getSide();
+    return `RectangleAdapter(${s},${s})`;
   }
 }
